@@ -1,47 +1,62 @@
-SMA Project – Skincare Review Analysis of Dot and Key Moisturizers
+# Skincare Review Analytics on Dot and Key Moisturizers (SMA Project)
 
-End‑to‑end Social Media Analytics capstone project by Divya Bothra focused on scraping, cleaning, and analyzing online skincare product reviews (moisturizers) using Python and Jupyter Notebooks.​
+End-to-end Social Media Analytics project by **Divya Bothra** focused on scraping, cleaning, and analyzing online skincare product (moisturizer) reviews using Python and NLP. [web:1]
 
-Project Overview
-This project collects raw product reviews from web sources, cleans and preprocesses the text, performs word‑level frequency analysis, and applies basic NLP techniques such as POS and NER tagging to extract key themes and insights about moisturizers. The final outputs are structured Excel files and notebooks that can be reused for marketing analytics, sentiment exploration, and topic summarization.​
+---
 
-Repository Structure
-Web_Scraping.ipynb – Notebook for scraping and assembling the raw reviews dataset into SMA_Dataset.xlsx and related files.​
+## Overview
 
-SMA_Capstone_DivyaBothra -2.ipynb – Main analysis notebook covering cleaning, tokenization, POS/NER tagging, and word/topic summaries.​
+This project implements a complete pipeline for skincare review analytics: collecting raw reviews from the web, preprocessing text, extracting entities and parts of speech, and generating word and topic summaries for moisturizers. [web:1]  
+The outputs can be used for marketing analysis, product insight generation, and as input to further models on customer opinions. [web:1]
 
-Scraped Datasets/ – Raw scraped review data before cleaning and transformation.​
+---
 
-cleaned_reviews.xlsx and cleaned_with_tokens.xlsx – Processed datasets with cleaned text and token‑level information.​
+## Features
 
-Word Frequency Excels/ – Word and token frequency outputs for further analysis or visualization.​
+- Web scraping of moisturizer reviews from selected online sources. [web:1]  
+- Text cleaning, tokenization, and normalization of review text. [web:1]  
+- Part-of-speech (POS) tagging and Named Entity Recognition (NER) on reviews. [web:1]  
+- Word frequency analysis and topic-style summaries at product level. [web:1]  
+- Export of intermediate and final datasets to Excel for easy reuse and reporting. [web:1]
 
-NER + POS Tagging Files/ – Outputs from named entity recognition and part‑of‑speech tagging pipelines.​
+---
 
-topic_summary_by_moisturizer.xlsx – Topic and keyword summary aggregated at the moisturizer level.​
+## Repository Structure
 
-Data and Methods
-Tech stack: Python, Jupyter Notebook, and Excel for exporting intermediate and final datasets.​
+- `Web_Scraping.ipynb`  
+  Scrapes moisturizer reviews and builds the core dataset (`SMA_Dataset.xlsx` and related files). [web:1]
 
-Core steps:
+- `SMA_Capstone_DivyaBothra -2.ipynb`  
+  Main analysis notebook for cleaning, NLP processing, POS/NER, and topic/word summaries. [web:1]
 
-Web scraping of moisturizer reviews from selected online sources.​
+- `Scraped Datasets/`  
+  Raw scraped review data. [web:1]
 
-Text cleaning, tokenization, and normalization of review text.​
+- `cleaned_reviews.xlsx`  
+  Reviews after cleaning and preprocessing. [web:1]
 
-POS tagging and named entity recognition to highlight important entities and descriptors.​
+- `cleaned_with_tokens.xlsx`  
+  Token-level representation of cleaned reviews. [web:1]
 
-Word frequency and topic‑style summaries at product level for marketing insights.​
+- `Word Frequency Excels/`  
+  Word and token frequency outputs for each product or group. [web:1]
 
-How to Use
-Clone the repository and open the notebooks in Jupyter or VS Code.​
+- `NER + POS Tagging Files/`  
+  Outputs from NER and POS tagging pipelines. [web:1]
 
-Start with Web_Scraping.ipynb if you want to replicate or extend the scraping; otherwise, use the provided Excel files as ready‑made inputs.​
+- `topic_summary_by_moisturizer.xlsx`  
+  Topic and keyword summaries aggregated at the moisturizer level. [web:1]
 
-Run SMA_Capstone_DivyaBothra -2.ipynb to reproduce the cleaning, NLP processing, and topic/word frequency outputs.​
+---
 
-Author
-Name: Divya Bothra
+## Tech Stack
 
-Role: SMA Capstone Project Owner and Analyst
+- Python  
+- Jupyter Notebook  
+- Excel (for exporting and sharing outputs) [web:1]
 
+---
+
+## Getting Started
+
+1. Clone this repository:  
