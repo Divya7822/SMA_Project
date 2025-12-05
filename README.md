@@ -1,56 +1,131 @@
-# Skincare Review Analytics on Dot and Key Moisturizers (SMA Project)
+# Understanding Consumer Perception of Dot & Key Moisturizers: A Comparative NLP-Driven Review Analysis
 
-End-to-end Social Media Analytics project by **Divya Bothra** focused on scraping, cleaning, and analyzing online skincare product (moisturizer) reviews using Python and NLP. [web:1]
-
----
-
-## Overview
-
-This project implements a complete pipeline for skincare review analytics: collecting raw reviews from the web, preprocessing text, extracting entities and parts of speech, and generating word and topic summaries for moisturizers. [web:1]  
-The outputs can be used for marketing analysis, product insight generation, and as input to further models on customer opinions. [web:1]
+**Owner:** Divya Bothra | **Capstone:** IIM Jammu, Social Media Analytics
 
 ---
 
-## Features
+## 🎯 Executive Summary
 
-- Web scraping of moisturizer reviews from selected online sources. [web:1]  
-- Text cleaning, tokenization, and normalization of review text. [web:1]  
-- Part-of-speech (POS) tagging and Named Entity Recognition (NER) on reviews. [web:1]  
-- Word frequency analysis and topic-style summaries at product level. [web:1]  
-- Export of intermediate and final datasets to Excel for easy reuse and reporting. [web:1]
+NLP-driven comparative analysis of **3,595 Flipkart reviews** across 4 Dot & Key moisturizer variants. Combines web scraping, preprocessing, NER/POS tagging, sentiment analysis, and topic modeling to generate **actionable product & marketing insights**.
+
+**Finding:** 80% positive sentiment overall; hydrating gels (Blue) significantly outperform ceramide creams (Pink) due to better formulation-skin type fit.
 
 ---
 
-## Repository Structure
+## 📊 Dataset Overview
 
-- `Web_Scraping.ipynb`  
-  Scrapes moisturizer reviews and builds the core dataset (`SMA_Dataset.xlsx` and related files). [web:1]
+| Variant | Product | Reviews | Key Focus |
+|---------|---------|---------|-----------|
+| Orange | Vitamin C + E Sorbet Brightener | 479 | Brightening |
+| Green | CICA Night Gel (Acne) | 868 | Sensitivity |
+| Blue | 72hr Hydrating Gel + Probiotics | 1,307 | Hydration |
+| Pink | Retinol + Ceramide Night Cream | 405 | Anti-Aging |
 
-- `SMA_Capstone_DivyaBothra -2.ipynb`  
-  Main analysis notebook for cleaning, NLP processing, POS/NER, and topic/word summaries. [web:1]
-
-- `Scraped Datasets/`  
-  Raw scraped review data. [web:1]
-
-- `cleaned_reviews.xlsx`  
-  Reviews after cleaning and preprocessing. [web:1]
-
-- `cleaned_with_tokens.xlsx`  
-  Token-level representation of cleaned reviews. [web:1]
-
-- `Word Frequency Excels/`  
-  Word and token frequency outputs for each product or group. [web:1]
-
-- `NER + POS Tagging Files/`  
-  Outputs from NER and POS tagging pipelines. [web:1]
-
-- `topic_summary_by_moisturizer.xlsx`  
-  Topic and keyword summaries aggregated at the moisturizer level. [web:1]
+**Total:** 3,595 reviews (after deduplication)
 
 ---
 
-## Tech Stack
+## 🔧 Technical Pipeline
 
-- Python  
-- Jupyter Notebook  
-- Excel (for exporting and sharing outputs) [web:1]
+### 1. **Web Scraping**
+- BeautifulSoup + Requests
+- Multi-sort scraping (4 sort orders)
+- Duplicate detection via fingerprinting
+
+### 2. **Preprocessing**
+- spaCy lemmatization & tokenization
+- Regex cleaning (special chars, emojis)
+- Stopword removal
+- Output: `cleaned_reviews.xlsx`
+
+### 3. **Linguistic Analysis**
+- POS tagging: NOUN, ADJ, VERB extraction
+- NER: Skin concerns (acne, oily), ingredients (ceramide, niacinamide)
+- Frequency analysis & visualization
+
+### 4. **Feature Engineering**
+- **Bag-of-Words:** Top 50 terms per corpus
+- **TF-IDF:** Variant-specific vocabulary extraction
+- **Word2Vec:** 100-D embeddings, semantic clustering
+
+### 5. **Sentiment Analysis**
+- **VADER:** Lexicon-based (fast, interpretable)
+- **ML Model:** TF-IDF + Logistic Regression
+  - Accuracy: **80.48%** | F1-Score (Positive): **0.89**
+
+### 6. **Topic Modeling**
+- LDA (Latent Dirichlet Allocation)
+- 4 overall topics | 2 topics per variant
+- Output: `topic_summary_by_moisturizer.xlsx`
+
+---
+
+## 📈 Key Results
+
+### Sentiment Distribution
+- **Blue:** 85% positive (highest)
+- **Green:** 82% positive
+- **Pink:** 76% positive
+- **Orange:** 74% positive
+
+### Top Insights
+- **Top Words:** good (1,380), product (1,199), skin (1,011), nice (542)
+- **Top Adjectives:** lightweight, hydrating, gentle, non-greasy
+- **Common Entities:** acne, oily skin, ceramide, hyaluronic acid
+
+### ML Model Performance
+| Metric | Score |
+|--------|-------|
+| Accuracy | 80.48% |
+| Precision (Positive) | 0.82 |
+| Recall (Positive) | 0.99 |
+| F1-Score (Positive) | 0.89 |
+
+---
+
+## 💡 Key Recommendations
+
+### Product Development
+1. **Orange:** Launch fragrance-free variant (top complaint)
+2. **Pink:** Create lightweight version for combination skin
+3. **Green:** Develop day-use gel for broader appeal
+4. **Blue:** Maintain current formulation (highest satisfaction)
+
+### Marketing Strategy
+1. **Segment-specific messaging:**
+   - Blue → Oily/humid climate users
+   - Pink → Dry/anti-aging segment
+   - Green → Acne-prone/sensitive skin
+   - Orange → Brightening/radiance seekers
+
+2. **Hero Ingredient Marketing:** Emphasize ceramide, hyaluronic acid, niacinamide benefits
+
+3. **Address Pain Points:** Highlight non-comedogenic, fragrance-free, lightweight properties in copy
+
+---
+
+## 📚 Technologies Used
+
+| Category | Tools |
+|----------|-------|
+| **Language** | Python 3.8+ |
+| **Data Collection** | BeautifulSoup, Requests |
+| **NLP** | spaCy, NLTK, Gensim |
+| **ML** | scikit-learn |
+| **Visualization** | Matplotlib, Seaborn, WordCloud |
+| **Data Processing** | Pandas, NumPy, openpyxl |
+
+---
+
+## 📄 License
+
+Educational project for IIM Jammu MBA program.
+
+---
+
+## 📞 Questions?
+
+Reach out via GitHub Issues or contact the team directly @mba24077@iimj.ac.in
+
+
+
