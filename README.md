@@ -54,9 +54,3 @@ The outputs can be used for marketing analysis, product insight generation, and 
 - Python  
 - Jupyter Notebook  
 - Excel (for exporting and sharing outputs) [web:1]
-
----
-
-## Getting Started
-
-1. Clone this repository:  
